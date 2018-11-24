@@ -18,8 +18,6 @@
         <p>Please answer all questions to the best of your ability.</p>
         <h4>Name (Required)</h4>
         <input type="text" name="" id="name" class="form-control" required>
-        <h4>Link to photo (Required)</h4>
-        <input type="text" name="" id="photo" class="form-control" required>
         <hr>
         <section id="friend-form">
             <section class="form-group">
@@ -209,7 +207,7 @@
         <hr>
         <footer class="footer">
             <p>
-                <a href="/api/friends">API Friends List</a> | <a href="https://github.com/a-ashbeck/FriendFinder">GitHub Repo</a>
+                <a href="/api/friends">API Friends List</a> | <a href="https://github.com/andresnew00/friendfinder">GitHub Repo</a>
             </p>
         </footer>
     </div>
@@ -223,7 +221,6 @@
         var modalBody = $('.modal-body');
         // set responses to local variables
         var name = $('#name').val().trim();
-        var photo = $('#photo').val();
         var item1 = parseInt($('#item1').val());
         var item2 = parseInt($('#item2').val());
         var item3 = parseInt($('#item3').val());
@@ -238,7 +235,6 @@
         // Set data to be sent to server
         var userData = {
             name: name,
-            photo: photo,
             scores: [
                 item1,
                 item2,
@@ -255,7 +251,7 @@
 
         // If responses are valid...
         if (
-            (name !== '') && (photo !== '') && (!isNaN(item1)) &&
+            (name !== '') && (!isNaN(item1)) &&
             (!isNaN(item2)) && (!isNaN(item3)) && (!isNaN(item4)) &&
             (!isNaN(item5)) && (!isNaN(item6)) && (!isNaN(item7)) &&
             (!isNaN(item8)) && (!isNaN(item9)) && (!isNaN(item10))
